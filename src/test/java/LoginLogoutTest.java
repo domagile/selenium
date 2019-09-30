@@ -65,11 +65,7 @@ public class LoginLogoutTest {
         driver.findElement(By.id("password")).sendKeys(password3);
         driver.findElement(By.xpath("//button[text()[contains(.,'Log in')]]")).click();
 
+        // check that login was successful
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()[contains(.,'utestnot')]]")));
-        driver.findElement(By.xpath("//div[text()[contains(.,'utestnot')]]")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()[contains(.,'Log Out')]]")));
-        driver.findElement(By.xpath("//div[text()[contains(.,'Log Out')]]")).click();
-        // check that logout was successful
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()[contains(.,'My Account')]]")));
     }
 }
