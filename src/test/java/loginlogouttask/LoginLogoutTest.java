@@ -1,3 +1,5 @@
+package loginlogouttask;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -5,7 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.NoSuchElementException;
-
+/*
+On the online game page, enter account 3 times (from different mailboxes).
+ */
 public class LoginLogoutTest {
     public static void main(String[] args) throws InterruptedException, NoSuchElementException {
 
@@ -24,11 +28,11 @@ public class LoginLogoutTest {
 
         driver.get(baseURL);
         WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()[contains(.,'Log in')]]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()[contains(.,'Log In')]]")));
 
         driver.findElement(By.id("accountName")).sendKeys(email);
         driver.findElement(By.id("password")).sendKeys(password);
-        driver.findElement(By.xpath("//button[text()[contains(.,'Log in')]]")).click();
+        driver.findElement(By.xpath("//button[text()[contains(.,'Log In')]]")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()[contains(.,'domagile@')]]")));
         driver.findElement(By.xpath("//div[text()[contains(.,'domagile@')]]")).click();
@@ -38,14 +42,14 @@ public class LoginLogoutTest {
 // start email2
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()[contains(.,'My Account')]]")));
         driver.findElement(By.xpath("//div[text()[contains(.,'My Account')]]")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()[contains(.,'Log In')]]")));
-        driver.findElement(By.xpath("//button[text()[contains(.,'Log In')]]")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()[contains(.,'Log In')]]")));
+        driver.findElement(By.xpath("//a[text()[contains(.,'Log In')]]")).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()[contains(.,'Log in')]]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()[contains(.,'Log In')]]")));
         driver.findElement(By.id("accountName")).clear();
         driver.findElement(By.id("accountName")).sendKeys(email2);
         driver.findElement(By.id("password")).sendKeys(password2);
-        driver.findElement(By.xpath("//button[text()[contains(.,'Log in')]]")).click();
+        driver.findElement(By.xpath("//button[text()[contains(.,'Log In')]]")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()[contains(.,'cubatarara40')]]")));
         driver.findElement(By.xpath("//div[text()[contains(.,'cubatarara40')]]")).click();
@@ -56,14 +60,14 @@ public class LoginLogoutTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()[contains(.,'My Account')]]")));
         driver.findElement(By.xpath("//div[text()[contains(.,'My Account')]]")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()[contains(.,'My Account')]]")));
-        driver.findElement(By.xpath("//button[text()[contains(.,'Log In')]]")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()[contains(.,'Log in')]]")));
+        driver.findElement(By.xpath("//a[text()[contains(.,'Log In')]]")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()[contains(.,'Log In')]]")));
 
 
         driver.findElement(By.id("accountName")).clear();
         driver.findElement(By.id("accountName")).sendKeys(email3);
         driver.findElement(By.id("password")).sendKeys(password3);
-        driver.findElement(By.xpath("//button[text()[contains(.,'Log in')]]")).click();
+        driver.findElement(By.xpath("//button[text()[contains(.,'Log In')]]")).click();
 
         // check that login was successful
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()[contains(.,'utestnot')]]")));
