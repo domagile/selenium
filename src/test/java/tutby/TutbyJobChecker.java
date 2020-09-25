@@ -10,7 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Opens vacancies for QA on tut.by
+ * Opens vacancies for QA on tut.by:
+ * - go to site and click Vacancies
+ * - switch to window with vacancies
+ * - fill position and press Search
  */
 public class TutbyJobChecker
 {
